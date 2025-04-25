@@ -8,6 +8,12 @@ def identify_user_intent(user_input):
     if "go" in user_input or "where" in user_input or "travel" in user_input:
         return "recommended_place"
     
+    if "hi" in user_input or "hello" in user_input or "thank you" in user_input or "good bye" in user_input or "bye" in user_input:
+        return "greeting"
+    
+    if "weather" in user_input or "temperature" in user_input or "cold" in user_input or "hot" in user_input:
+        return "weather_info"
+    
 
 def identify_entities(user_input):
     entitiy_list = []
@@ -32,5 +38,5 @@ def parse_input(user_input):
         "entities": entity
     }
 
-dic = parse_input("good bye")
+dic = parse_input("does japan hot in december")
 print(dic)
